@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="259" viewBox="0 0 260 259">
+    <defs>
+        <circle id="b" cx="130.5" cy="129.5" r="110.5"/>
+        <filter id="a" width="125.8%" height="125.8%" x="-12.9%" y="-12.9%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="9.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.187773164 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <ellipse cx="20" cy="220.5" fill="#C30078" rx="20" ry="19.5"/>
+        <ellipse cx="216" cy="32.5" fill="#FFC800" rx="14" ry="13.5"/>
+        <circle cx="63.5" cy="62.5" r="45.5" fill="#6E006D"/>
+        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+        <use fill="#FFF" xlink:href="#b"/>
+        <path fill="#6E006D" d="M110.964 86l-3.3 3.299a1.76 1.76 0 0 0-.828-.226h-18a1.8 1.8 0 0 0-1.8 1.8v18a1.8 1.8 0 0 0 1.8 1.8h18a1.8 1.8 0 0 0 1.8-1.8V93.418l4.873-4.873L110.964 86zm-5.928 21.073h-14.4v-14.4h13.655l-6.455 6.454L95.51 96.8l-2.545 2.545 3.6 3.6a1.8 1.8 0 0 0 2.545 0l5.927-5.927v10.055zM110.964 118.4l-3.3 3.299a1.76 1.76 0 0 0-.828-.226h-18a1.8 1.8 0 0 0-1.8 1.8v18a1.8 1.8 0 0 0 1.8 1.8h18a1.8 1.8 0 0 0 1.8-1.8v-15.455l4.873-4.873-2.545-2.545zm-5.928 21.073h-14.4v-14.4h13.655l-6.455 6.454-2.327-2.327-2.545 2.545 3.6 3.6a1.8 1.8 0 0 0 2.545 0l5.927-5.927v10.055zM110.964 149l-3.3 3.299a1.76 1.76 0 0 0-.828-.226h-18a1.8 1.8 0 0 0-1.8 1.8v18a1.8 1.8 0 0 0 1.8 1.8h18a1.8 1.8 0 0 0 1.8-1.8v-15.455l4.873-4.873-2.545-2.545zm-5.928 21.073h-14.4v-14.4h13.655l-6.455 6.454-2.327-2.327-2.545 2.545 3.6 3.6a1.8 1.8 0 0 0 2.545 0l5.927-5.927v10.055zM121.236 107.073h52.2v-3.6h-52.2zM121.236 96.273h52.2v-3.6h-52.2zM121.236 139.473h52.2v-3.6h-52.2zM121.236 128.673h52.2v-3.6h-52.2zM121.236 170.073h52.2v-3.6h-52.2zM121.236 159.273h52.2v-3.6h-52.2z"/>
+    </g>
+</svg>
