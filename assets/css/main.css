@@ -20998,6 +20998,11 @@ header {
     color: #6e006d;
     font-size: 26px;
     margin-bottom: 30px; }
+  .page .p-body .p-main-title-secondary {
+    font-weight: bold;
+    color: #c30078;
+    font-size: 23px;
+    margin-bottom: 30px; }
   .page .p-body p {
     margin-bottom: 15px; }
   .page .p-body .accordion {
