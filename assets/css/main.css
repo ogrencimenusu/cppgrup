@@ -20651,6 +20651,9 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media (max-width: 575.98px) {
+      header .logo a img {
+        max-width: 200px; } }
   @media (min-width: 576px) and (max-width: 767.98px) {
     header .menu {
       padding-right: 0; } }
@@ -20855,7 +20858,67 @@ header {
   min-height: 50px;
   padding: 20px 0px;
   background: -webkit-gradient(linear, left top, right top, from(#c30078), to(#6e006e));
-  background: linear-gradient(90deg, #c30078 0%, #6e006e 100%); }
+  background: linear-gradient(90deg, #c30078 0%, #6e006e 100%);
+  color: #fff; }
+  .page-title a {
+    color: #fff; }
+    .page-title a.geridon {
+      display: block;
+      margin-right: 15px; }
+  .page-title h3 {
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 15px; }
+  .page-title .dropdown {
+    display: none;
+    width: 100%; }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .page-title .dropdown {
+        display: block; } }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      .page-title .dropdown {
+        display: block; } }
+    @media (max-width: 575.98px) {
+      .page-title .dropdown {
+        display: block; } }
+    @media (max-width: 575.98px) {
+      .page-title .dropdown {
+        margin: 0px 15px; } }
+    .page-title .dropdown .dropdown-toggle {
+      width: 100%;
+      background: #fff;
+      color: #3c3c3c;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 15px 20px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-weight: bold; }
+      .page-title .dropdown .dropdown-toggle i {
+        color: #6e006d; }
+      .page-title .dropdown .dropdown-toggle:after {
+        display: none; }
+    .page-title .dropdown .dropdown-menu {
+      width: 100%;
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      border-radius: 0;
+      margin-top: -1px; }
+      @media (max-width: 575.98px) {
+        .page-title .dropdown .dropdown-menu {
+          margin: 0px 0px;
+          margin-top: -1px; } }
+      .page-title .dropdown .dropdown-menu a {
+        color: #3c3c3c;
+        display: block;
+        padding: 10px 20px; }
+        .page-title .dropdown .dropdown-menu a i {
+          margin-right: 10px; }
 
 .page.page-menu .container-fluid .row-wrap {
   -webkit-box-orient: horizontal;
@@ -20867,11 +20930,15 @@ header {
   padding-right: 30px;
   padding-top: 30px;
   background: #fff; }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .page.page-menu .p-menu {
+      display: none; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .page.page-menu .p-menu {
+      display: none; } }
   @media (max-width: 575.98px) {
     .page.page-menu .p-menu {
-      margin: 0px 15px;
-      margin-top: 15px;
-      padding-top: 15px; } }
+      display: none; } }
   .page.page-menu .p-menu ul {
     padding: 0;
     margin: 0;
@@ -20909,6 +20976,14 @@ header {
   @media (max-width: 575.98px) {
     .page.page-menu .p-body {
       padding: 15px;
+      margin-top: 30px; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .page.page-menu .p-body {
+      padding: 0px;
+      margin-top: 30px; } }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .page.page-menu .p-body {
+      padding: 0px;
       margin-top: 30px; } }
 
 .page .p-body .p-main-title {
@@ -21006,6 +21081,92 @@ header {
           margin-right: 10px; }
         .page .p-body .accordion .collapse-wrap .collapse-body ul li a:hover {
           color: #6e006d; }
+
+.page.page-settings {
+  margin-top: 30px; }
+  .page.page-settings form button.btn {
+    background: #82b331;
+    color: #fff;
+    float: right;
+    padding: 7px 30px; }
+  .page.page-settings form .form-group {
+    margin-bottom: 30px; }
+    .page.page-settings form .form-group.cinsiyet {
+      margin-bottom: 15px; }
+      .page.page-settings form .form-group.cinsiyet p {
+        margin-bottom: 5px; }
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #82b331 !important;
+  background-color: #82b331 !important;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important; }
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: "\f00c";
+  color: #fff;
+  font-size: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.custom-formcontrol .form-control {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-radius: 0px;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid #3c3c3c;
+  padding-left: 0;
+  padding-right: 0; }
+
+.custom-formcontrol .form-control:focus {
+  border-color: #3c3c3c; }
+
+.custom-formcontrol .form-group {
+  position: relative; }
+
+.custom-formcontrol .form-group label.input {
+  position: absolute;
+  background: transparent;
+  z-index: 99;
+  font-size: 16px;
+  width: 100%;
+  top: 9px;
+  left: 0px; }
+
+.custom-formcontrol .form-group label.input::before {
+  content: attr(title);
+  position: absolute;
+  color: #404040;
+  background: transparent;
+  -webkit-transition: all 300ms;
+  transition: all 300ms; }
+
+.custom-formcontrol .form-group .form-control:focus + label.input::before {
+  color: #404040;
+  top: -16px;
+  font-size: 10px; }
+
+.custom-formcontrol .form-group .form-control:valid + label.input::before {
+  top: -16px;
+  font-size: 10px;
+  content: attr(data-title); }
 
 footer {
   padding: 50px 0px;

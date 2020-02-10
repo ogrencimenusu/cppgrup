@@ -23,7 +23,11 @@ header{
     a{
       height: 100%;
       display: flex;
-      img{}
+      img{
+        @include esm{
+          max-width: 200px;
+        }
+      }
     }
   }
   .menu{
@@ -259,6 +263,65 @@ header{
   min-height: 50px;
   padding: 20px 0px;
   background: linear-gradient(90deg, #c30078 0%, #6e006e 100%);
+  color: $white;
+  a{
+    color: $white;
+    &.geridon{
+      display: block;
+      margin-right: 15px;
+    }
+  }
+  h3{
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+  .dropdown{
+
+    display: none;
+    width: 100%;
+    @include md{ display: block}
+    @include sm{ display: block}
+    @include esm{ display: block}
+    @include esm{
+      margin: 0px 15px;
+    }
+    .dropdown-toggle{
+      width: 100%;
+      background: $white;
+      color: #3c3c3c;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px;
+      align-items: center;
+      font-weight: bold;
+      i{
+        color: $primary;
+      }
+      &:after{
+        display:none;
+      }
+    }
+    .dropdown-menu{
+      width: 100%;
+      box-shadow: $box-shadow;
+      border-radius: 0;
+      margin-top: -1px;
+
+      @include esm{
+        margin: 0px 0px;
+        margin-top: -1px;
+      }
+      a{
+        color: #3c3c3c;
+        display: block;
+        padding: 10px 20px;
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 .page{
 
@@ -274,11 +337,10 @@ header{
       padding-right: 30px;
       padding-top: 30px;
       background: $white;
-      @include esm{
-        margin: 0px 15px;
-        margin-top: 15px;
-        padding-top: 15px;
-      }
+      @include md{ display: none}
+      @include sm{ display: none}
+      @include esm{ display: none}
+
 
       ul{
         padding: 0;
@@ -323,6 +385,14 @@ header{
       padding: 30px;
       @include esm{
         padding: 15px;
+        margin-top: 30px;
+      }
+      @include sm{
+        padding: 0px;
+        margin-top: 30px;
+      }
+      @include md{
+        padding: 0px;
         margin-top: 30px;
       }
     }
@@ -443,7 +513,94 @@ header{
     }
 
   }
+  &.page-settings{
+    margin-top: 30px;
+    form{
+      button.btn{
+        background: #82b331;
+        color: $white;
+        float: right;
+        padding: 7px 30px;
+      }
+      .form-group{
+        margin-bottom: 30px;
+        &.cinsiyet{
+          margin-bottom: 15px;
+          p{
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
 }
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #82b331 !important;
+  background-color: #82b331 !important;
+  box-shadow: unset !important;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: "\f00c";
+  color: $white;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .custom-formcontrol .form-control {
+    box-shadow: none !important;
+    border-radius: 0px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #3c3c3c;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .custom-formcontrol .form-control:focus {
+    border-color: #3c3c3c; }
+
+  .custom-formcontrol .form-group {
+    position: relative; }
+  .custom-formcontrol .form-group label.input {
+    position: absolute;
+    background: transparent;
+    z-index: 99;
+    font-size: 16px;
+    width: 100%;
+    top: 9px;
+    left: 0px; }
+
+  .custom-formcontrol .form-group label.input::before {
+    content: attr(title);
+    position: absolute;
+    color: #404040;
+    background: transparent;
+    transition: all 300ms;
+  }
+
+  .custom-formcontrol .form-group .form-control:focus + label.input::before {
+    color: #404040;
+    top: -16px;
+    font-size: 10px;
+
+  }
+
+  .custom-formcontrol .form-group .form-control:valid + label.input::before {
+    top: -16px;
+    font-size: 10px;
+
+    content: attr(data-title); }
+
 footer{
   padding: 50px 0px;
   background: #393939;
