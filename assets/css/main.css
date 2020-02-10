@@ -20977,6 +20977,9 @@ header {
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto; }
+    @media (max-width: 575.98px) {
+      .page-title.page-title-dashboard .sag {
+        overflow: hidden; } }
     .page-title.page-title-dashboard .sag .row {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
