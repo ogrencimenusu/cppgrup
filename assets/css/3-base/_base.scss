@@ -46,6 +46,8 @@ header{
         color: #3c3c3c;
         opacity: .75;
         padding: 7px 15px;
+        position: relative;
+        top: 5px;
         &.active,&:hover{
           opacity: 1;
 
@@ -58,6 +60,8 @@ header{
           display: flex;
           align-items: center;
           border-radius: $rounded-pill;
+          top: 0;
+          opacity: 1;
           &:after {
             margin-left: 10px;
             margin-right: 6px;
@@ -399,8 +403,23 @@ header{
     }
   }
 }
+.btn-orange{
+  background: #ffc800;
+  color: #3c3c3c  ;
+  &:focus,&:hover{
+    box-shadow: 0 0 0 0.2rem rgba(#ffc800, 0.25);
+  }
+}
+.btn-gray{
+  background: #ececec;
+  color: #3c3c3c  ;
+  &:focus,&:hover{
+    box-shadow: 0 0 0 0.2rem rgba(#ececec, 0.25);
+  }
+}
 .page{
   flex: auto;
+
 
   &.page-menu{
     background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(195,0,120,0) 50%);
@@ -442,11 +461,19 @@ header{
               filter: grayscale(1);
               margin-right: 10px;
             }
+            i{
+              transition: $transition-base-cs;
+              margin-right: 10px;
+              font-size: 19px;
+            }
           }
           &.active,&:hover{
             a{
               img{
                 filter: grayscale(0);
+              }
+              i{
+                color: #82B331;
               }
               color: #3c3c3c;
             }
@@ -477,6 +504,7 @@ header{
     }
   }
   .p-body{
+
     .p-main-title{
       font-weight: bold;
       color: $primary;
@@ -598,6 +626,264 @@ header{
     }
 
   }
+  &.page-accdetail{
+    .p-menu{
+      .btn{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include md{
+        display: block;
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-bottom: 20px;
+      }
+      @include sm{ display: block;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 20px;
+      }
+      @include esm{ display: block; padding-right: 20px; padding-left: 20px}
+      .item{
+        border-radius: $border-radius;
+        border: 1px solid transparent;
+        padding:20px ;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        justify-content: center;
+        @include lg{
+          padding:10px ;
+        }
+        a{
+          color: #3c3c3c;
+          @include lg{
+            font-size: 13px;
+          }
+        }
+        i{
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 15px;
+          border-radius: $rounded-pill;
+          font-size: 10px;
+          border: 1px solid transparent;
+        }
+        &.item-warning{
+          border-color: $primary;
+          i{
+            background: $primary;
+            color: $white;
+            transform: rotate(180deg);
+          }
+        }
+        &.item-success{
+          i{
+            background: #82b331;
+            color: $white;
+          }
+        }
+        &.item-new{
+          border: 1px dashed  #3c3c3c;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          i{
+            margin: auto;
+            margin-bottom: 15px;
+            border: 2px solid #3c3c3c;
+          }
+        }
+      }
+    }
+    .p-body{
+      color: #585858;
+      .p-main-title{
+        margin-bottom: 15px;
+        color: #585858;
+      }
+      .items{
+        .item{
+          display: flex;
+          align-items: center;
+          background: $white;
+          margin-bottom: 20px;
+          border-radius: $border-radius;
+          padding:20px 30px;
+          @include esm{
+            flex-wrap: wrap;
+          }
+
+          span{
+            display: block;
+          }
+          .tarih{
+            flex: 30%;
+            @include esm{
+              flex: 50%;
+            }
+          }
+          .uyari{
+            flex: 30%;
+            @include esm{
+              flex: 50%;
+            }
+          }
+          .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include esm{
+              flex:100%;
+              margin-top: 15px;
+            }
+            i{
+              color: $white;
+              border: 2px solid transparent;
+              border-radius: $rounded-pill;
+              width: 20px;
+              height: 20px;
+              font-size: 9px;
+              display: flex;
+              align-items: center;
+              margin-right: 10px;
+              justify-content: center;
+            }
+            &.btn-gray{
+              background: #a9a9a9;
+              border-color:rgba(#a9a9a9, 0.25) ;
+              color: $white;
+              i{
+                background:$white ;
+                color: #a9a9a9;
+              }
+              &:focus,&:hover{
+                box-shadow: 0 0 0 0.2rem rgba(#a9a9a9, 0.25);
+              }
+            }
+            &.btn-success{
+              background: #82b331;
+              border-color:rgba(#82b331, 0.25) ;
+              i{
+                border: 2px solid $white;
+              }
+              &:focus,&:hover{
+                box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
+              }
+            }
+          }
+
+          .-baslik{
+            font-size: 17px;
+            color: #585858;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .-d{
+            font-size: 14px;
+            color: #585858;
+            font-family: Arial;
+          }
+        }
+      }
+      .progress{
+        border-radius: $rounded-pill;
+
+        background: $white;
+        .progress-bar{
+          background: #ffc800;
+          border-radius: $rounded-pill;
+        }
+      }
+      .liste{
+        margin-top: 30px;
+        .list{
+          a{
+            color: #585858;
+            display: flex;
+            position: relative;
+            padding-bottom: 30px;
+            margin-bottom: 0;
+            &:before{
+              content: '';
+              bottom: -10px;
+              left: 10px;
+              height: 100%;
+              width: 2px;
+              background: #a0a0a0;
+              position: absolute;
+              z-index: 0;
+            }
+            i{
+              position: relative;
+              z-index: 2;
+              width: 20px;
+              height: 20px;
+              min-width: 20px;
+              max-width: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 15px;
+              border: 2px solid #a0a0a0;
+              font-size: 10px;
+              border-radius: $rounded-pill;
+              &:before{
+                display: none;
+              }
+            }
+          }
+          &.done{
+            a{
+              color: #82b331;
+              i{
+                background: #82b331;
+                color: $white;
+                border-color: #82b331;
+                &:before{
+                  display: block;
+                }
+              }
+            }
+
+          }
+          &.disable{
+            i{
+              background: #ececec;
+            }
+
+          }
+          &.now{
+            a{
+              font-weight: bold;
+              font-size: 18px;
+              i{
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+                min-height: 30px;
+                margin-left: -5px;
+                margin-right: 10px;
+                background: $white;
+                border-color: #82b331;
+              }
+            }
+
+          }
+          &:nth-last-child(1){
+            a{
+              &:before{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   &.page-settings{
     margin-top: 30px;
     form{
@@ -620,6 +906,45 @@ header{
   }
   &.page-dashboard{
     .p-body{
+      .row{
+        .col-4{
+          margin-bottom: 60px;
+          padding-right: 0;
+
+          .item{
+          }
+        }
+      }
+      @include md{
+        .row{
+          overflow-x: scroll;
+          overflow-y: hidden;
+          flex-wrap: unset;
+          .col-4{
+            flex: 0 0 40%;
+            max-width: 40%;
+            margin-bottom: 30px;
+
+            .item{
+            }
+          }
+        }
+      }
+      @include sm{
+        .row{
+          overflow-x: scroll;
+          overflow-y: hidden;
+          flex-wrap: unset;
+          .col-4{
+            flex: 0 0 80%;
+            max-width: 80%;
+            margin-bottom: 30px;
+
+            .item{
+            }
+          }
+        }
+      }
       @include esm{
         .row{
           overflow-x: scroll;
@@ -635,6 +960,7 @@ header{
           }
         }
       }
+
     }
     .p-main-title{
       color: #585858;
