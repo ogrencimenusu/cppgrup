@@ -21216,6 +21216,18 @@ header {
         margin-bottom: 15px; }
         .page.page-settings form .form-group.cinsiyet p {
           margin-bottom: 5px; }
+  @media (max-width: 575.98px) {
+    .page.page-dashboard .p-body .row {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -ms-flex-wrap: unset;
+          flex-wrap: unset; }
+      .page.page-dashboard .p-body .row .col-4 {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 80%;
+                flex: 0 0 80%;
+        max-width: 80%;
+        margin-bottom: 30px; } }
   .page.page-dashboard .p-main-title {
     color: #585858;
     font-size: 22px; }
@@ -21238,15 +21250,6 @@ header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      .page.page-dashboard .item {
-        height: unset; } }
-    @media (min-width: 576px) and (max-width: 767.98px) {
-      .page.page-dashboard .item {
-        height: unset; } }
-    @media (max-width: 575.98px) {
-      .page.page-dashboard .item {
-        height: unset; } }
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .page.page-dashboard .item {
         padding: 10px; } }

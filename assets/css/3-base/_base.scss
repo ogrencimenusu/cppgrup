@@ -619,6 +619,23 @@ header{
     }
   }
   &.page-dashboard{
+    .p-body{
+      @include esm{
+        .row{
+          overflow-x: scroll;
+          overflow-y: hidden;
+          flex-wrap: unset;
+          .col-4{
+            flex: 0 0 80%;
+            max-width: 80%;
+            margin-bottom: 30px;
+
+            .item{
+            }
+          }
+        }
+      }
+    }
     .p-main-title{
       color: #585858;
       font-size: 22px;
@@ -636,9 +653,6 @@ header{
       flex-direction: column;
       margin-bottom: 30px;
       justify-content: center;
-      @include md{ height: unset}
-      @include sm{ height: unset}
-      @include esm{ height: unset}
       @include lg{
         padding:10px ;
       }
