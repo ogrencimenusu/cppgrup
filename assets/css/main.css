@@ -20917,6 +20917,9 @@ header {
   font-size: 26px;
   margin-bottom: 30px; }
 
+.page .p-body p {
+  margin-bottom: 15px; }
+
 .page .p-body .accordion {
   background: transparent !important;
   background: #fff; }
