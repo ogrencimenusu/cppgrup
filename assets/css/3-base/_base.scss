@@ -153,8 +153,14 @@ header{
             a{
               border-bottom: 1px solid #d8d8d8;
               padding: 15px 0px;
-              display: block;
+              display: flex;
+              align-items: center;
               color: #7d7d7d;
+              img{
+                margin-right: 10px;
+                filter: grayscale(1);
+
+              }
               &:nth-child(1){
                 padding-top: 0;
               }
@@ -164,8 +170,8 @@ header{
               }
               &.active{
                 color: #3c3c3c;
-                i{
-                  color: #82b331;
+                img{
+                  filter: grayscale(0);
                 }
               }
               i{
@@ -262,10 +268,12 @@ header{
   }
 }
 .page-title{
-  min-height: 50px;
   padding: 20px 0px;
   background: linear-gradient(90deg, #c30078 0%, #6e006e 100%);
   color: $white;
+  @include md{ min-height: unset}
+  @include sm{ min-height: unset}
+  @include esm{ min-height: unset}
   a{
     color: $white;
     &.geridon{
@@ -324,13 +332,77 @@ header{
       }
     }
   }
+  &.page-title-dashboard{
+    .sol{
+      flex: 0 0 0 30%;
+      display: flex;
+      align-items: center;
+      @include md{ display: none}
+      @include sm{ display: none}
+      @include esm{ display: none}
+      span{
+        font-size: 18px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .sag{
+      flex: auto;
+      .row{
+        justify-content: center;
+        @include esm{
+          .col-3{
+            flex: 0 0 31.3333%;
+            max-width: 31.3333%;
+          }
+        }
+      }
+      input{
+        user-select: none !important;
+        font-family: "FS Rufus" !important;
+        font-size: 17px !important;
+        font-weight: 300 !important;
+        outline: 0 !important;
+        box-shadow: 0 !important;
+      }
+      .canvas{
+        width: 100px;
+        @include esm{
+          width: 80px;
+        }
+      }
+      .baslik{
+        font-weight: bold;
+        margin-top: 10px;
+        a{
+          display: block;
+          font-size: 18px;
+
+          @include lg{
+            font-size: 16px;
+          }
+          @include esm{
+            font-size: 14px;
+            text-align: center;
+          }
+          @include sm{
+            font-size: 13px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
 .page{
   flex: auto;
 
   &.page-menu{
-
-
+    background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(195,0,120,0) 50%);
+    @include md{ background: transparent}
+    @include sm{ background: transparent}
+    @include esm{ background: transparent}
     .container{
       height: 100%;
       .row-wrap{
@@ -359,20 +431,18 @@ header{
             display: flex;
             border-bottom: 1px solid #d8d8d8;
             color: #7d7d7d;
-            align-content: center;
+            align-items: center;
             transition: $transition-base-cs;
-
-            i{
+            img{
               transition: $transition-base-cs;
+              filter: grayscale(1);
               margin-right: 10px;
-              font-size: 19px;
-              margin-top: 2px;
             }
           }
           &.active,&:hover{
             a{
-              i{
-                color: #82B331;
+              img{
+                filter: grayscale(0);
               }
               color: #3c3c3c;
             }
@@ -387,6 +457,7 @@ header{
     }
     .p-body{
       padding: 30px;
+      background: #ececec;
       @include esm{
         padding: 15px;
         margin-top: 30px;
@@ -539,6 +610,74 @@ header{
           p{
             margin-bottom: 5px;
           }
+        }
+      }
+    }
+  }
+  &.page-dashboard{
+    .p-main-title{
+      color: #585858;
+      font-size: 22px;
+      span{
+        font-weight: 300;
+        margin-left: 5px;
+      }
+    }
+    .item{
+      border-radius: $border-radius;
+      border: 1px solid transparent;
+      padding:20px ;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      justify-content: center;
+      @include md{ height: unset}
+      @include sm{ height: unset}
+      @include esm{ height: unset}
+      @include lg{
+        padding:10px ;
+      }
+      a{
+        color: #3c3c3c;
+        @include lg{
+          font-size: 13px;
+        }
+      }
+      i{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        border-radius: $rounded-pill;
+        font-size: 10px;
+        border: 1px solid transparent;
+      }
+      &.item-warning{
+        border-color: $primary;
+        i{
+          background: $primary;
+          color: $white;
+          transform: rotate(180deg);
+        }
+      }
+      &.item-success{
+        i{
+          background: #82b331;
+          color: $white;
+        }
+      }
+      &.item-new{
+        border: 1px dashed  #3c3c3c;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        i{
+          margin: auto;
+          margin-bottom: 15px;
+          border: 2px solid #3c3c3c;
         }
       }
     }

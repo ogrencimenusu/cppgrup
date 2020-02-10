@@ -19,6 +19,7 @@ gulp.task("concatScripts", function() {
         'assets/js/vendor/bootstrap.min.js',
         'assets/js/vendor/magnificpopup.min.js',
         'assets/js/vendor/slick.min.js',
+        'assets/js/vendor/knob.js',
         ])
     .pipe(maps.init())
     .pipe(concat('main.js'))
