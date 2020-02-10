@@ -2,6 +2,8 @@
 body{
   font-family: "FS Rufus";
   background: #ececec;
+  display: flex;
+  flex-direction: column;
 }
 body,html{
   height: 100%;
@@ -324,13 +326,15 @@ header{
   }
 }
 .page{
+  flex: auto;
 
   &.page-menu{
 
 
-    .container-fluid{
+    .container{
+      height: 100%;
       .row-wrap{
-        flex-direction: row;
+        height: 100%;
       }
     }
     .p-menu{
