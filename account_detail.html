@@ -267,27 +267,5 @@
      <!-- endbuild -->
 
     <script src="assets/js/theme.js"></script>
-  <script>
-      $(function() {
-          $(".dial").knob({
-              readOnly:true,
-          });
-          input_val();
-          $( window ).resize(function() {
-              input_val();
-          });
-          function input_val(){
-              $('input.dial').each(function (index) {
-                  var max= $('input.dial').eq(index).data('max');
-                  var val= $('input.dial').eq(index).attr('value');
-
-                  $('input.dial').eq(index).val(val+'/'+max)
-                  $('input.dial').eq(index).attr( "disabled", "disabled" )
-              })
-              
-
-          }
-      });
-  </script>
   </body>
 </html>

@@ -21187,7 +21187,8 @@ header {
       width: 100px; }
       @media (max-width: 575.98px) {
         .page-title.page-title-dashboard .sag .canvas {
-          width: 80px; } }
+          width: 80px;
+          margin: auto; } }
     .page-title.page-title-dashboard .sag .baslik {
       font-weight: bold;
       margin-top: 10px; }
