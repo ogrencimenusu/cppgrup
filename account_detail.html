@@ -130,7 +130,7 @@
            </div>
    
            <div class="p-body col-lg-9">
-              <h3 class="p-main-title">E-posta Adreslerim </h3>
+              <h3 class="p-main-title">Uyarılar</h3>
               <p>
                  Tarafınıza önceden yapılan bildirim ve uyarılarınız
               </p>
@@ -214,7 +214,7 @@
                        Aktif oturumların izinsiz erişimlere engel olmak için kapatılması
                     </a>
                  </div>
-                 <div class="list done">
+                 <div class="list disable">
                     <a href="">
                       <i class="fa fa-check"></i>
                        Bağlantılı hesaplarınızın şifrelerinin değiştirilmesi
@@ -267,5 +267,19 @@
      <!-- endbuild -->
 
     <script src="assets/js/theme.js"></script>
+  <script>
+      $(function() {
+          $('.liste .list').click(function (event) {
+              event.preventDefault();
+              if ($(this).hasClass('now')){
+                  //var ind=$(this).index()
+                  $(this).removeClass('now').addClass('done');
+                  //$('.liste .list').eq(ind + 1).removeClass('disable').addClass('now');
+              }
+              return false;
+   
+          });
+       });
+  </script>
   </body>
 </html>

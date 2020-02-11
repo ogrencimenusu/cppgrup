@@ -120,11 +120,25 @@
 
      <div class="container">
         <div class="row row-wrap">
-           <div class="p-body col-lg-12">
+           <div class="p-body col-md-10">
               <h3 class="p-main-title" style="color: #585858">Kişisel Bilgilerim</h3>
               <form action="" method="post" class="w-100 custom-formcontrol">
                  <div class="row">
+                    <div class="col-sm-12">
+                       <div class="form-group">
+                          <div class="alert alert-success">
+                             <i class="fa fa-check mr-2"></i>
+                             Alert Success
+                          </div>
+                          <div class="alert alert-warning mb-0">
+                             
+                             <i class="fa fa-warning mr-2"></i>
+                             Alert Warning
+                          </div>
+                       </div>
+                    </div>
                     <div class="col-sm-6">
+                       
                        <div class="form-group cinsiyet">
                           <p>Cinsiyetiniz</p>
                           <div class="custom-control custom-radio custom-control-inline">
@@ -147,8 +161,8 @@
                     </div>
                     <div class="col-sm-6">
                        <div class=" form-group">
-                          <input id="dt" name="dt" required="" autocomplete="off" type="text" class="form-control">
-                          <label class="input" for="dt" title="Doğum Tarihiniz" data-title="Doğum Tarihiniz"></label>
+                          <input id="dt" name="dt" required="" autocomplete="off" class="form-control datepicker" >
+                          <label class="input input_date" for="dt" title="Doğum Tarihiniz" data-title="Doğum Tarihiniz"></label>
                        </div>
                        <div class=" form-group">
                           <input id="ceptel" name="ceptel" required="" autocomplete="off" type="text" class="form-control">
@@ -164,6 +178,7 @@
                           </button>
                        </div>
                     </div>
+                    
                  </div>
               </form>
            </div>
@@ -206,5 +221,20 @@
      <!-- endbuild -->
 
     <script src="assets/js/theme.js"></script>
+  <script>
+      $(function() {
+         $('.datepicker').datepicker({
+             uiLibrary: 'bootstrap4',
+             iconsLibrary: 'fontawesome',
+             format: 'dd mmmm yyyy',
+             locale: 'tr-tr',
+             showButtonPanel:false,
+         });
+         var input_date=$('.input_date').detach();
+         $('.gj-datepicker.input-group').append(input_date);
+         $('.gj-datepicker.input-group .input-group-append').remove();
+      });
+
+  </script>
   </body>
 </html>

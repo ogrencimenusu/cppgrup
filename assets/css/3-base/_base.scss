@@ -12,12 +12,19 @@ body,html{
 a{
   text-decoration: none !important;
 }
+.container{
+  @include esm{
+    padding: 0px 30px;
+  }
+}
 #login{
+  padding: 0 !important; ;
   .modal-dialog{
     max-width: unset;
     width: 100%;
     margin:0 ;
     .modal-content{
+      overflow: hidden;
       height: 100%;
       min-height: 100vh;
       border-radius: 0;
@@ -159,9 +166,11 @@ header{
     width: 100%;
     background: transparent;
     .logo{
+      @include esm{
+        padding-right: 0;
+      }
       img{
         @include esm{
-          max-width: 160px;
         }
       }
     }
@@ -175,8 +184,8 @@ header{
         box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
       }
       @include esm{
-        font-size: 11px;
-        padding: 7px 10px;
+        font-size: 10px;
+        padding: 7px 9px;
       }
       i{
         margin-right: 10px;
@@ -214,7 +223,7 @@ header{
         font-weight: bold;
         color: #3c3c3c;
         opacity: .75;
-        padding: 7px 15px;
+        padding: 7px 30px;
         position: relative;
         top: 5px;
         &.active,&:hover{
@@ -223,14 +232,16 @@ header{
         }
       }
       .dropdown{
+        margin-left: 15px;
         .link{
+          padding: 7px 15px;
           background: #e5e5e5;
-          opacity: .7;
           display: flex;
           align-items: center;
           border-radius: $rounded-pill;
           top: 0;
           opacity: 1;
+          font-size: 14px;
           &:after {
             margin-left: 10px;
             margin-right: 6px;
@@ -440,6 +451,7 @@ header{
     }
   }
 }
+
 .page-title{
   padding: 20px 0px;
   background: linear-gradient(90deg, #c30078 0%, #6e006e 100%);
@@ -510,6 +522,7 @@ header{
       flex: 0 0 0 30%;
       display: flex;
       align-items: center;
+      padding-left: 15px;
       @include md{ display: none}
       @include sm{ display: none}
       @include esm{ display: none}
@@ -522,12 +535,14 @@ header{
     }
     .sag{
       flex: auto;
+
       @include esm{
         overflow: hidden;
 
       }
       .row{
         justify-content: center;
+        overflow: hidden;
         @include esm{
           .col-3{
             flex: 0 0 31.3333%;
@@ -595,9 +610,14 @@ header{
   }
 }
 .page{
-  flex: auto;
-
-
+  &.page-contact{
+    form{
+      margin-bottom: 60px;
+      .form-group{
+        margin-bottom: 30px;
+      }
+    }
+  }
   &.page-menu{
     background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(195,0,120,0) 50%);
     @include md{ background: transparent}
@@ -666,6 +686,7 @@ header{
     .p-body{
       padding: 30px;
       background: #ececec;
+      padding-right: 15px;
       @include esm{
         padding: 15px;
         margin-top: 30px;
@@ -808,6 +829,16 @@ header{
       .btn{
         width: 100%;
         margin-bottom: 15px;
+        font-weight: bold;
+        color:#3c3c3c;
+        @include esm{
+        }
+        &.btn-gray{
+          @include esm{
+            background: transparent;
+          }
+        }
+
       }
       @include md{
         display: block;
@@ -820,7 +851,10 @@ header{
         padding-right: 100px;
         padding-bottom: 20px;
       }
-      @include esm{ display: block; padding-right: 20px; padding-left: 20px}
+      @include esm{ display: block;
+        padding-right: 70px;
+        padding-left: 70px;
+      }
       .item{
         border-radius: $border-radius;
         border: 1px solid transparent;
@@ -882,7 +916,11 @@ header{
         margin-bottom: 15px;
         color: #585858;
       }
+
       .items{
+        @include esm{
+          margin-top: 30px;
+        }
         .item{
           display: flex;
           align-items: center;
@@ -899,12 +937,18 @@ header{
           }
           .tarih{
             flex: 30%;
+            @include sm{
+              flex: 20%;
+            }
             @include esm{
               flex: 50%;
             }
           }
           .uyari{
             flex: 30%;
+            @include sm{
+              flex: 20%;
+            }
             @include esm{
               flex: 50%;
             }
@@ -913,6 +957,16 @@ header{
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 15%;
+            @include lg{
+              flex: 20%;
+            }
+            @include md{
+              flex: 25%;
+            }
+            @include sm{
+              flex: 25%;
+            }
             @include esm{
               flex:100%;
               margin-top: 15px;
@@ -1064,18 +1118,27 @@ header{
   &.page-settings{
     margin-top: 30px;
     form{
+      .input-group-append{
+        display: none;
+      }
       button.btn{
         background: #82b331;
         color: $white;
         float: right;
         padding: 7px 30px;
+        font-weight: bold;
       }
       .form-group{
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         &.cinsiyet{
-          margin-bottom: 15px;
+          margin-bottom: 25px;
+          @include esm{
+            margin-bottom: 30px;
+          }
           p{
             margin-bottom: 5px;
+            color: #404040;
+            opacity: .8;
           }
         }
       }
@@ -1086,8 +1149,6 @@ header{
       .row{
         .col-4{
           margin-bottom: 60px;
-          padding-right: 0;
-
           .item{
           }
         }
@@ -1211,6 +1272,10 @@ header{
   background-color: #82b331 !important;
   box-shadow: unset !important;
 }
+.custom-radio .custom-control-label::before{
+  background: transparent;
+  border: 2px solid #a0a0a0
+}
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
   background: transparent;
   -webkit-font-smoothing: antialiased;
@@ -1235,7 +1300,19 @@ header{
   border-bottom: 1px solid #3c3c3c;
   padding-left: 0;
   padding-right: 0;
+  color: #404040;
 }
+.custom-formcontrol .form-control.datepicker {
+  color: transparent;
+}
+.custom-formcontrol .form-control.datepicker:focus,.custom-formcontrol .form-control.datepicker:valid {
+  color: #404040;
+}
+
+.custom-formcontrol .form-group .form-control.datepicker:focus ~ {
+  background: red !important;
+}
+
 .custom-formcontrol .form-control:focus {
   border-color: #3c3c3c; }
 .custom-formcontrol .form-group {
@@ -1246,19 +1323,21 @@ header{
   z-index: 99;
   font-size: 16px;
   width: 100%;
-  top: 9px;
+  top: 7px;
   left: 0px; }
 
 .custom-formcontrol .form-group label.input::before {
   content: attr(title);
   position: absolute;
-  color: #404040;
   background: transparent;
   transition: all 300ms;
+  color: #404040;
+  opacity: .6;
 }
 
 .custom-formcontrol .form-group .form-control:focus + label.input::before {
   color: #404040;
+  opacity: .6;
   top: -16px;
   font-size: 10px;
 
@@ -1267,7 +1346,7 @@ header{
 .custom-formcontrol .form-group .form-control:valid + label.input::before {
   top: -16px;
   font-size: 10px;
-
+  opacity: .5;
   content: attr(data-title); }
 
 section.kvk{
@@ -1299,7 +1378,8 @@ section.kvk{
   }
   p{
     margin-bottom: 0;
-    font-size: 20px;
+    font-size: 18px;
+    color: #414141;
     @include esm{
       font-size: 14px;
       text-align: center;
@@ -1343,7 +1423,7 @@ section.s-slider{
             left: -500px;
             @include esm{
               width: 1010px;
-              height: 1230px;
+              height: 1209px;
             }
             @include md{
               width: 1240px;
@@ -1408,7 +1488,6 @@ section.s-slider{
               margin-right: -20px;
             }
             @include eelg{
-              width: 120%;
             }
           }
         }
@@ -1420,7 +1499,23 @@ section.s-slider{
 
 section.haberler{
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+  .container{
+    @include esm{
+      padding-right: 15px;
+    }
+  }
+  .draggable{
+    margin-right: -20px;
+    @include sm{
+      margin-right: 0;
+    }
+    @include esm{
+      margin-right: 0;
+    }
+  }
   h3{
     font-size: 36px;
     color: #c4077b;
@@ -1429,7 +1524,6 @@ section.haberler{
     font-weight: bold;
     justify-content: space-between;
     margin-bottom: 40px;
-    padding-right: 20px;
     @include esm{
       padding-right: 5px;
       padding-left: 10px;
@@ -1440,7 +1534,7 @@ section.haberler{
       height: 50px;
       color: #3c3c3c;
       background: #dfdfdf;
-      &:focus,&:hover{
+      &:focus,&:hover,&.haber_next{
         background: #82b331;
         color: $white;
         box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
@@ -1474,6 +1568,7 @@ section.haberler{
           color: #3c3c3c;
           margin-bottom: 0;
           font-weight: bold;
+          padding-top: 20px;
         }
       }
       p{
@@ -1510,98 +1605,50 @@ section.haberler{
 }
 section.rep-box{
   position: relative;
-  margin: 30px 0px;
-  min-height: 300px;
-  overflow:hidden;
-  @include lg{
-    min-height: 350px;
-    margin:0 0px;
-  }
-  @include md{
-    min-height: 350px;
-    margin:0 0px;
+  margin: 0px;
+  min-height: 430px;
+  overflow: hidden;
+  margin-bottom: -60px;
+  @include sm{
+    overflow: unset;
+    min-height: unset;
   }
   @include esm{
-    margin-top: 0;
-    margin-bottom: 50px;
+    overflow: unset;
     min-height: unset;
-    overflow:unset;
+  }
 
-  }
-  @include sm{
-    margin-top: 0;
-    margin-bottom: 50px;
-    min-height: unset;
-    overflow:unset;
-  }
   &.rep-box-left{
     .circle{
-      margin-left: -130px;
-      @include esm{
-        margin-left: -15px;
-      }
-      @include md{
-        margin-left: -180px;
-      }
-      @include sm{
-        margin-left: -15px;
-      }
       &:before{
-        @include esm{
-          left: -170px;
-        }
-        @include sm{
-          left: -170px;
+        left: -190px;
+        @include md{
+          left: -230px;
         }
       }
-
     }
   }
   &.rep-box-right{
+    .col-md-3{
+      @include esm{
+        padding-right: 0;
+      }
+    }
     .circle{
       margin-left: auto;
-      margin-right: -130px;
-      @include elg{
-        margin-right: 0;
-      }
-      @include lg{
-        margin-right: 0;
-        margin-left: -60px;
-      }
-      @include md{
-        margin-right: 0;
-        margin-left: -113px;
-      }
-      @include sm{
-        margin-left: auto;
-        margin-bottom: -280px;
-        margin-right: 110px;
-      }
       @include esm{
-        margin-left: auto;
-        margin-right: -15px;
-        margin-bottom: -230px;
-
+        overflow: hidden;
       }
       &:before{
-        @include elg{
-          right: -100px;
-        }
+        right: -20px;
         @include md{
-          right: -130px;
-        }
-        @include lg{
-          right: -130px;
-        }
-        @include md{
-          right: -170px;
+          right: 20px;
         }
         @include sm{
-          right: -275px;
-
+          right: -180px;
         }
         @include esm{
-          right: -200px;
+          right: -180px;
         }
       }
     }
@@ -1626,32 +1673,28 @@ section.rep-box{
   }
   .circle{
     position: relative;
-    width: 300px;
-    height: 300px;
-    margin-bottom: -270px;
+    width: 430px;
+    height: 430px;
+    margin-bottom: -320px;
+    padding: 50px 0px;
     @include md{
-      margin-bottom: -243px;
+      margin-bottom: -290px;
     }
     @include esm{
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-      margin-bottom: -230px;
+      width: 320px;
+
     }
+
     &:before{
       content: '';
       z-index: -1;
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       -webkit-box-shadow: 0 0 65px 0 rgba(208, 208, 208, 0.5);
       box-shadow: 0 0 65px 0 rgba(208, 208, 208, 0.5);
       background-color: #ffffff;
       border-radius: 50rem;
-      @include esm{
-        width: 300px;
-        height: 300px;
-      }
     }
   }
   .row{
@@ -1663,6 +1706,7 @@ section.rep-box{
     margin-bottom: 30px;
   }
   p{
+    font-size: 18px;
     color: #414141;
   }
   img{
@@ -1676,7 +1720,6 @@ section.rep-box{
       max-width: 200px;
     }
   }
-
 }
 section.ikonlar{
   margin-top: 80px;
@@ -1685,13 +1728,14 @@ section.ikonlar{
     margin-top: 30px;
   }
   .row{
-    .col-sm-3{
+    .col-md-3{
       text-align: center;
       display: flex;
       flex-direction: column;
       @include esm{
         margin-bottom: 30px;
       }
+
       img{
 
       }
@@ -1706,8 +1750,14 @@ section.ikonlar{
       p{
         font-size: 20px;
         color: #414141;
+
         @include sm{
-          font-size: 13px;
+          font-size: 14px;
+          padding: 0px 40px;
+        }
+        @include esm{
+          font-size: 18px;
+          padding: 0px 40px;
         }
       }
     }
@@ -1717,7 +1767,28 @@ footer{
   padding: 50px 0px;
   background: #393939;
   color: #979797;
+  font-size: 14px;
+  flex: auto;
+  .col-lg-3{
+    @include esm{order: 1;}
+    @include md{order: 1;}
+    @include sm{order: 1;}
+    &:nth-child(1){
 
+      @include esm{
+        order: 2;
+        margin-top: 30px;
+      }
+      @include sm{
+        order: 2;
+        margin-top: 30px;
+      }
+      @include md{
+        order: 2;
+        margin-top: 30px;
+      }
+    }
+  }
   a{
     color: #979797;
     &:hover{
@@ -1726,11 +1797,14 @@ footer{
     &.logo{
       img{
         width: 210px;
+        margin-bottom: 15px
       }
     }
     &.link{
       display: block;
       margin-bottom: 30px;
+      font-size: 14px;
+      font-weight: 300;
     }
   }
 }

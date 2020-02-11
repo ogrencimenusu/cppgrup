@@ -32,34 +32,77 @@
               <div class="col-md-6 body">
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-close"></i>
-               
+                    
                  </button>
                  <h3>
                     <i class="fa fa-lock"></i>
                     Giriş Yap</h3>
-                 <form action="" method="post" class="w-100 custom-formcontrol">
-                    <div class="row">
-                       <div class="col-md-8">
-                          <div class=" form-group">
-                             <input id="mail" name="mail" required="" autocomplete="off" type="text" class="form-control">
-                             <label class="input" for="mail" title="E-Posta Adresiniz" data-title="E-Posta Adresiniz"></label>
-                          </div>
-                          <div class=" form-group">
-                             <input id="sifre" name="sifre" required="" autocomplete="off" type="password" class="form-control" value="">
-                             <label class="input" for="sifre" title="Şifreniz" data-title="Şifreniz"></label>
-                          </div>
-                          <div class="form-group" style="overflow:hidden">
-                             <button type="submit" class="btn btn-green ">
-                                Giriş Yap
-                             </button>
-                          </div>
-                          <div class=" form-group">
-                             <a href="" class="sifre-rec"><i class="fa fa-question"></i> Şifremi Unuttum</a>
+                 <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-giris" role="tabpanel" >
+                     <form action="" method="post" class="w-100 custom-formcontrol">
+                       <div class="row">
+                          <div class="col-md-8">
+                             <div class="form-group">
+                                <div class="alert alert-success">
+                                   <i class="fa fa-check mr-2"></i>
+                                   Alert Success
+                                </div>
+                                <div class="alert alert-warning">
+                                   <i class="fa fa-warning mr-2"></i>
+                                   Alert Warning
+                                </div>
+                             </div>
+                             <div class=" form-group">
+                                <input id="mail2" name="mail2" required="" autocomplete="off" type="text" class="form-control">
+                                <label class="input" for="mail2" title="E-Posta Adresiniz" data-title="E-Posta Adresiniz"></label>
+                             </div>
+                             <div class=" form-group">
+                                <input id="sifre" name="sifre" required="" autocomplete="off" type="password" class="form-control" value="">
+                                <label class="input" for="sifre" title="Şifreniz" data-title="Şifreniz"></label>
+                             </div>
+                             <div class="form-group" style="overflow:hidden">
+                                <button type="submit" class="btn btn-green ">
+                                   Giriş Yap
+                                </button>
+                             </div>
+                             <div class=" form-group">
+                                <a data-toggle="pill" href="#pills-sifreunut" class="sifre-rec"><i class="fa fa-question"></i> Şifremi Unuttum</a>
+                             </div>
                           </div>
                        </div>
+                     </form>
                     </div>
-                 </form>
-            
+                    <div class="tab-pane" id="pills-sifreunut" role="tabpanel" >
+                       <form action="" method="post" class="w-100 custom-formcontrol">
+                          <div class="row">
+                             <div class="col-md-8">
+                                <div class="form-group">
+                                   <div class="alert alert-info">
+                                      <i class="fa fa-info mr-2"></i>
+                                      Alert Info
+                                   </div>
+                                   <div class="alert alert-danger">
+                                      <i class="fa fa-exclamation mr-2"></i>
+                                      Alert Danger
+                                   </div>
+                                </div>
+                                <div class=" form-group">
+                                   <input id="mail" name="mail" required="" autocomplete="off" type="text" class="form-control">
+                                   <label class="input" for="mail" title="E-Posta Adresiniz" data-title="E-Posta Adresiniz"></label>
+                                </div>
+                                <div class="form-group" style="overflow:hidden">
+                                   <button type="submit" class="btn btn-green ">
+                                      Şifre Sıfırlama Linkini Gönder
+                                   </button>
+                                </div>
+                                <div class=" form-group">
+                                   <a data-toggle="pill" href="#pills-giris" class="sifre-rec"><i class="fa fa-arrow-left"></i> Giriş Ekranına Geri Dön</a>
+                                </div>
+                             </div>
+                          </div>
+                       </form>
+                    </div>
+                 </div>
               </div>
            </div>
         </div>
@@ -128,7 +171,7 @@
   <section class="ikonlar">
      <div class="container">
         <div class="row">
-           <div class="col-md-3">
+           <div class="col-sm-3">
               <img src="assets/img/card.svg" alt="">
               <div class="count" style="color: #c30078">10</div>
               <p>
@@ -136,7 +179,7 @@
                  Kredi / Banka Hesap Kartı
               </p>
            </div>
-           <div class="col-md-3">
+           <div class="col-sm-3">
               <img src="assets/img/envelope.svg" alt="">
               <div class="count" style="color: #82b331">10</div>
               <p>
@@ -144,7 +187,7 @@
                  Adresi
               </p>
            </div>
-           <div class="col-md-3">
+           <div class="col-sm-3">
               <img src="assets/img/phone.svg" alt="">
               <div class="count"  style="color: #0096ff">10</div>
               <p>
@@ -152,7 +195,7 @@
                  Numarası
               </p>
            </div>
-           <div class="col-md-3">
+           <div class="col-sm-3">
               <img src="assets/img/passport.svg" alt="">
               <div class="count" style="color: #6e006d">10</div>
               <p>
