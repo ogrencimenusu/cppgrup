@@ -547,6 +547,7 @@ header{
         width: 100px;
         @include esm{
           width: 80px;
+          margin: auto;
         }
       }
       .baslik{
