@@ -12,9 +12,178 @@ body,html{
 a{
   text-decoration: none !important;
 }
+#login{
+  .modal-dialog{
+    max-width: unset;
+    width: 100%;
+    margin:0 ;
+    .modal-content{
+      height: 100%;
+      min-height: 100vh;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      button.close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        opacity: 1;
+        outline: 0;
+        background: transparent;
+        i{
+          outline: 0;
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 4px solid #c30078;
+          color: #c30078;
+          width: 40px;
+          height: 40px;
+          border-radius: $rounded-pill;
+        }
+      }
+      .row{
+        align-items: center;
+        .body{
+          padding:35px;
+          position: unset;
+          h3{
+            color: #c30078;
+            font-weight: bold;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+
+            i{
+              border-radius: $rounded-pill;
+              background: #ffc800;
+              color: #3c3c3c;
+              margin-right: 20px;
+              width: 60px;
+              height: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          .btn{
+            width: 100%;
+            font-size: 18px;
+            padding-top: 15px 15px;
+          }
+          a.sifre-rec{
+            color: #404040;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+              text-decoration: underline !important;
+            }
+            i{
+              border-radius: $rounded-pill;
+              margin-right: 5px;
+              border: 1px solid #404040;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 10px;
+            }
+          }
+
+        }
+        .img{
+          position: unset;
+          z-index: 2;
+          padding: 10px 139px;
+          @include lg{
+            padding: 10px 80px;
+          }
+          @include md{
+            padding: 10px 60px;
+          }
+          @include sm{
+            display: none;
+          }
+          @include esm{
+            display: none;
+          }
+          &:before{
+            top: 0;
+            left: 0;
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, #c30078 0%, #6e006e 100%);
+            opacity: .8;
+            z-index: -1;
+          }
+          &:after{
+            top: 0;
+            left: 0;
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-image:url("https://via.placeholder.com/720x1500/fff") ;
+            background-position: center;
+            background-size: cover;
+            z-index: -2;
+          }
+          p{
+
+            font-size: 22px;
+            color: $white;
+            margin-top: 30px;
+          }
+
+        }
+      }
+    }
+  }
+}
 header{
   padding: 20px 0px;
   background: $white;
+  &.header-index{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    .logo{
+      img{
+        @include esm{
+          max-width: 160px;
+        }
+      }
+    }
+    a.btn-giris{
+      background: #82b331;
+      color: $white;
+      padding:10px 15px;
+      border-radius: $border-radius;
+      outline: 0;
+      &:focus,&:hover{
+        box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
+      }
+      @include esm{
+        font-size: 11px;
+        padding: 7px 10px;
+      }
+      i{
+        margin-right: 10px;
+      }
+    }
+
+  }
   .logo{
     @include sm{
       padding-left: 0;
@@ -401,6 +570,13 @@ header{
         }
       }
     }
+  }
+}
+.btn-green{
+  background: #82b331;
+  color: $white  ;
+  &:focus,&:hover{
+    box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
   }
 }
 .btn-orange{
@@ -1050,50 +1226,492 @@ header{
   align-items: center;
   justify-content: center;
 }
-  .custom-formcontrol .form-control {
-    box-shadow: none !important;
-    border-radius: 0px;
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid #3c3c3c;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .custom-formcontrol .form-control:focus {
-    border-color: #3c3c3c; }
+.custom-formcontrol .form-control {
+  box-shadow: none !important;
+  border-radius: 0px;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid #3c3c3c;
+  padding-left: 0;
+  padding-right: 0;
+}
+.custom-formcontrol .form-control:focus {
+  border-color: #3c3c3c; }
+.custom-formcontrol .form-group {
+  position: relative; }
+.custom-formcontrol .form-group label.input {
+  position: absolute;
+  background: transparent;
+  z-index: 99;
+  font-size: 16px;
+  width: 100%;
+  top: 9px;
+  left: 0px; }
 
-  .custom-formcontrol .form-group {
-    position: relative; }
-  .custom-formcontrol .form-group label.input {
-    position: absolute;
-    background: transparent;
-    z-index: 99;
-    font-size: 16px;
+.custom-formcontrol .form-group label.input::before {
+  content: attr(title);
+  position: absolute;
+  color: #404040;
+  background: transparent;
+  transition: all 300ms;
+}
+
+.custom-formcontrol .form-group .form-control:focus + label.input::before {
+  color: #404040;
+  top: -16px;
+  font-size: 10px;
+
+}
+
+.custom-formcontrol .form-group .form-control:valid + label.input::before {
+  top: -16px;
+  font-size: 10px;
+
+  content: attr(data-title); }
+
+section.kvk{
+  margin-top: -60px;
+  @include esm{
+    margin-top: 20px;
+  }
+  @include sm{
+    margin-top: 20px;
+  }
+
+  .row{
+    align-items: center;
+  }
+  img{
     width: 100%;
-    top: 9px;
-    left: 0px; }
+    @include esm{
+      max-width: 50%;
+      margin: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+    @include sm{
+      max-width: 50%;
+      margin: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  p{
+    margin-bottom: 0;
+    font-size: 20px;
+    @include esm{
+      font-size: 14px;
+      text-align: center;
+    }
+    @include sm{
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+section.s-slider{
+  position: relative;
 
-  .custom-formcontrol .form-group label.input::before {
-    content: attr(title);
-    position: absolute;
-    color: #404040;
-    background: transparent;
-    transition: all 300ms;
+
+  .container{
+    @include esm{
+      overflow: hidden;
+    }
+    .row{
+      height: 600px;
+      align-items: center;
+      @include esm{
+        height: unset;
+        padding-top: 80px;
+      }
+      @include sm{
+        height: unset;
+        padding-top: 80px;
+      }
+      .col-md-6{
+        .text{
+          .w-circle{
+            z-index: -1;
+            position: absolute;
+            width: 1300px;
+            height: 1300px;
+            box-shadow: 0 0 65px 0 rgba(208, 208, 208, 0.5);
+            background-color: #ffffff;
+            border-radius: 50rem;
+            top: -930px;
+            left: -500px;
+            @include esm{
+              width: 1010px;
+              height: 1230px;
+            }
+            @include md{
+              width: 1240px;
+            }
+            @include sm{
+              width: 1010px;
+            }
+          }
+          .main{
+            color: #c4077b;
+            font-size: 48px;
+            font-weight: bold;
+            @include esm{
+              font-size: 28px;
+            }
+          }
+          p{
+            font-size: 22px;
+            color: #414141;
+            @include esm{
+              font-size: 14px;
+            }
+          }
+        }
+        .img{
+          position: relative;
+          @include esm{
+            text-align: right;
+          }
+          img.circles{
+            position: absolute;
+            z-index: 1;
+            left: -100px;
+            top: 0px;
+            @include lg{
+              left: -71px;
+              width: 210px;
+            }
+            @include md{
+              left: -71px;
+              width: 210px;
+              top: -50px;
+            }
+            @include sm{
+              max-width: 100px;
+              left: 10px;
+            }
+            @include esm{
+              max-width: 100px;
+              left: 10px;
+            }
+
+          }
+          img.s-img{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            @include sm{
+              margin-right: -20px;
+            }
+            @include esm{
+              margin-right: -20px;
+            }
+            @include eelg{
+              width: 120%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+section.haberler{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  h3{
+    font-size: 36px;
+    color: #c4077b;
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-right: 20px;
+    @include esm{
+      padding-right: 5px;
+      padding-left: 10px;
+    }
+    button{
+      border-radius: $rounded-pill;
+      width: 50px;
+      height: 50px;
+      color: #3c3c3c;
+      background: #dfdfdf;
+      &:focus,&:hover{
+        background: #82b331;
+        color: $white;
+        box-shadow: 0 0 0 0.2rem rgba(#82b331, 0.25);
+      }
+    }
+  }
+  .haberler_slider{
+    margin-left: -10px;
+    margin-right: -10px;
+    @include esm{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .slick-slide{
+
+    margin: 0px 10px;
+    background: $white;
+    @include esm{
+      position: relative;
+      left: -30px;
+    }
+    .item{
+      img{
+        width: 100%;
+      }
+      a{
+        h4{
+          padding:10px 20px;
+          font-size: 18px;
+          color: #3c3c3c;
+          margin-bottom: 0;
+          font-weight: bold;
+        }
+      }
+      p{
+        font-size: 14px;
+        padding:10px 20px;
+        color: #3c3c3c;
+      }
+      a{
+        outline: 0;
+        box-shadow: unset;
+        i{
+          border: 2px solid #82b331;
+          color: #82b331;
+          border-radius: $rounded-pill;
+          width: 30px;
+          height: 30px;
+          margin-left: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 13px;
+          transition: $transition-base-cs;
+        }
+        &:focus,&:hover{
+          box-shadow: unset;
+          i{
+            background: #82b331 ;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+section.rep-box{
+  position: relative;
+  margin: 30px 0px;
+  min-height: 300px;
+  overflow:hidden;
+  @include lg{
+    min-height: 350px;
+    margin:0 0px;
+  }
+  @include md{
+    min-height: 350px;
+    margin:0 0px;
+  }
+  @include esm{
+    margin-top: 0;
+    margin-bottom: 50px;
+    min-height: unset;
+    overflow:unset;
+
+  }
+  @include sm{
+    margin-top: 0;
+    margin-bottom: 50px;
+    min-height: unset;
+    overflow:unset;
+  }
+  &.rep-box-left{
+    .circle{
+      margin-left: -130px;
+      @include esm{
+        margin-left: -15px;
+      }
+      @include md{
+        margin-left: -180px;
+      }
+      @include sm{
+        margin-left: -15px;
+      }
+      &:before{
+        @include esm{
+          left: -170px;
+        }
+        @include sm{
+          left: -170px;
+        }
+      }
+
+    }
+  }
+  &.rep-box-right{
+    .circle{
+      margin-left: auto;
+      margin-right: -130px;
+      @include elg{
+        margin-right: 0;
+      }
+      @include lg{
+        margin-right: 0;
+        margin-left: -60px;
+      }
+      @include md{
+        margin-right: 0;
+        margin-left: -113px;
+      }
+      @include sm{
+        margin-left: auto;
+        margin-bottom: -280px;
+        margin-right: 110px;
+      }
+      @include esm{
+        margin-left: auto;
+        margin-right: -15px;
+        margin-bottom: -230px;
+
+      }
+      &:before{
+        @include elg{
+          right: -100px;
+        }
+        @include md{
+          right: -130px;
+        }
+        @include lg{
+          right: -130px;
+        }
+        @include md{
+          right: -170px;
+        }
+        @include sm{
+          right: -275px;
+
+        }
+        @include esm{
+          right: -200px;
+        }
+      }
+    }
+    @include esm{
+      .col-md-3{
+        order: 1;
+        text-align: right;
+      }
+      .col-md-9{
+        order: 2;
+      }
+    }
+    @include sm{
+      .col-md-3{
+        order: 1;
+        text-align: right;
+      }
+      .col-md-9{
+        order: 2;
+      }
+    }
+  }
+  .circle{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: -270px;
+    @include md{
+      margin-bottom: -243px;
+    }
+    @include esm{
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: -230px;
+    }
+    &:before{
+      content: '';
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: 0 0 65px 0 rgba(208, 208, 208, 0.5);
+      box-shadow: 0 0 65px 0 rgba(208, 208, 208, 0.5);
+      background-color: #ffffff;
+      border-radius: 50rem;
+      @include esm{
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+  .row{
+    align-items: center;
+  }
+  h3{
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  p{
+    color: #414141;
+  }
+  img{
+    @include lg{
+      max-width: 240px;
+    }
+    @include md{
+      max-width: 180px;
+    }
+    @include esm{
+      max-width: 200px;
+    }
   }
 
-  .custom-formcontrol .form-group .form-control:focus + label.input::before {
-    color: #404040;
-    top: -16px;
-    font-size: 10px;
-
+}
+section.ikonlar{
+  margin-top: 80px;
+  margin-bottom: 60px;
+  @include esm{
+    margin-top: 30px;
   }
+  .row{
+    .col-sm-3{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      @include esm{
+        margin-bottom: 30px;
+      }
+      img{
 
-  .custom-formcontrol .form-group .form-control:valid + label.input::before {
-    top: -16px;
-    font-size: 10px;
-
-    content: attr(data-title); }
-
+      }
+      .count{
+        font-weight: bold;
+        font-size: 36px;
+        margin-top: 30px;
+        @include esm{
+          margin-top: 0;
+        }
+      }
+      p{
+        font-size: 20px;
+        color: #414141;
+        @include sm{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
 footer{
   padding: 50px 0px;
   background: #393939;
@@ -1115,3 +1733,4 @@ footer{
     }
   }
 }
+
