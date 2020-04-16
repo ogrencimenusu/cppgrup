@@ -25691,4 +25691,28 @@ footer {
       font-size: 14px;
       font-weight: 300; }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body {
+    display: block; }
+    body footer {
+      -webkit-box-flex: unset;
+          -ms-flex: unset;
+              flex: unset; }
+  #login .modal-dialog {
+    max-width: 100%;
+    height: 100vh; }
+    #login .modal-dialog .modal-content .row .img * {
+      color: #404040 !important; }
+    #login .modal-dialog .modal-content .row .img:after {
+      display: none; }
+    #login .modal-dialog .modal-content .row .img:before {
+      display: none; }
+    #login .modal-dialog .modal-content .row .body button.close {
+      top: -40px;
+      right: 120px; }
+  section.ikonlar .row .col-md-3 {
+    display: block; }
+    section.ikonlar .row .col-md-3 img {
+      margin: auto; } }
+
 /*# sourceMappingURL=main.css.map */
